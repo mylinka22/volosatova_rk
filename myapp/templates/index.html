@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Families</title>
+</head>
+<body>
+    <h1>Введите подмножества</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for i in "123456"|make_list %}
+        <label for="value{{ i }}">Множество {{ i }}:</label>
+        <input type="text" name="value{{ i }}" id="value{{ i }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>
